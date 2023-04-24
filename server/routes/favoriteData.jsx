@@ -1,6 +1,7 @@
 const express = require("express")
 const favoriteRouter = express.Router()
-const Favorite = require("../../../models/favoriteModel.jsx")
+// const Favorite = require("../../../models/favoriteModel.jsx")
+const Favorite = require("../models/favoriteModel.jsx")
 
 
 //Get All

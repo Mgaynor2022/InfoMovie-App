@@ -24,7 +24,8 @@ mongoose.connect(process.env.MY_MONGO_URL,{useNewUrlParser: true})
 // .catch(err => console.error(err));
 
 //Routes
-app.use("/favoritesData", require("./routes/routes/favoriteData.jsx"))
+app.use("/favoritesData", require("./routes/favoriteData.jsx"))
+//server/routes/favoriteData.jsx
 
 //Error Handling 
 app.use((err,req,res,next) =>{
