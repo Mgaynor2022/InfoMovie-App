@@ -1,6 +1,7 @@
 import React, {useContext} from 'react'
 import {DataContext} from "./MovieContext"
 import About from './About'
+import {Routes, Route, Link} from "react-router-dom"
 
 function LandingPage(){
 
@@ -39,7 +40,10 @@ function LandingPage(){
                 <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center text-center px-12">
                     <div>
                         <h1 className="text-3xl md:text-6xl leading-tight mb-16">Let The Search Begin </h1>
-                        <a href="#" className="border border-white py-4 px-8 hover:bg-white hover:text-black">Search Movie</a>
+                            <Link 
+                            to="/SearchStyle"
+                            className="border border-white py-4 px-8 hover:bg-white hover:text-black">Search Movie
+                            </Link>
                     </div>
                 </div>
           </div>

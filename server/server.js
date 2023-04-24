@@ -4,6 +4,7 @@ const morgan = require("morgan")
 const mongoose = require("mongoose")
 const cors = require("cors")
 const path = require("path")
+require("dotenv").config()
 
 //MiddleWare for every request
 app.use(express.json())
@@ -15,12 +16,15 @@ app.use(cors({
 }))
 
 // Connect To DataBase 
-mongoose.connect('mongodb://localhost:27017/favoritesData',{useNewUrlParser: true})
+mongoose.connect(process.env.MY_MONGO_URL,{useNewUrlParser: true})
 .then(()=> console.log("Connected to MongoDB"))
 .catch(err => console.error(err));
+// mongoose.connect('mongodb://localhost:27017/favoritesData',{useNewUrlParser: true})
+// .then(()=> console.log("Connected to MongoDB"))
+// .catch(err => console.error(err));
 
 //Routes
-app.use("/favoritesData", require("./routes/favoriteData.jsx"))
+app.use("/favoritesData", require("./routes/routes/favoriteData.jsx"))
 
 //Error Handling 
 app.use((err,req,res,next) =>{
