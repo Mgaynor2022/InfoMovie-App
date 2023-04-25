@@ -16,7 +16,7 @@ app.use(cors({
 }))
 
 // Connect To DataBase 
-mongoose.connect(process.env.MY_MONGO_URL,{useNewUrlParser: true})
+mongoose.connect(process.env.MONGODB_URI,{useNewUrlParser: true})
 .then(()=> console.log("Connected to MongoDB"))
 .catch(err => console.error(err));
 // mongoose.connect('mongodb://localhost:27017/favoritesData',{useNewUrlParser: true})
