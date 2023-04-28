@@ -1,7 +1,9 @@
 import React, {useContext} from 'react'
 import {DataContext} from "./MovieContext"
 import About from './About'
-import {Routes, Route, Link} from "react-router-dom"
+import {Link} from "react-router-dom"
+import Fade from 'react-reveal/Fade'
+
 
 function LandingPage(){
 
@@ -51,7 +53,9 @@ function LandingPage(){
                 <div className="flex flex-wrap -mx-2 justify-center">
                     <About />
                     <div className="grid grid-cols-3 gap-3 mt-5">
-                        {favoriteMovies}
+                        <Fade top distance='20%' duration={2500}>
+                            {favoriteMovies}
+                        </Fade>
                     </div>      
                 </div>
 

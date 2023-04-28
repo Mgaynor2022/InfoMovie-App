@@ -1,9 +1,11 @@
 import {Routes, Route, Link} from "react-router-dom"
+import {Link as Scroll} from 'react-scroll' 
 import MovieContext  from "./Components/MovieContext"
 import SearchStyle from "./Components/SearchStyle"
 import Favorites from "./Components/Favorites"
 import LandingPage from "./Components/LandingPage"
 import Footer from "./Components/Footer"
+import About from "./Components/About"
 
 function App () {
     return (
@@ -14,7 +16,14 @@ function App () {
 					<ul className="hidden md:flex uppercase text-sm ml-8">
 
 						<li>
-							<Link className="text-gray-600" to="/LandingPage">Home</Link>
+							<Link className="text-gray-600 hover:underline" to="/LandingPage">Home</Link>
+						</li>
+                        <li className="ml-8">
+                            <Link to="/About">
+                                <Scroll className="text-gray-600" activeClass="active"
+                                to="About" spy={true} smooth={true} offset={50} duration={500}>About</Scroll>
+
+                            </Link>
 						</li>
 						<li className="ml-8">
 							<Link className="text-gray-600" to="/searchStyle">Search</Link>
@@ -32,6 +41,7 @@ function App () {
                     <Route path="/LandingPage"  index element={<LandingPage />} />
                     <Route path="/searchStyle" element={<SearchStyle />}/>
                     <Route path="/Favorites" element={<Favorites />}/>
+                    <Route path="/About" element={<About />}/>
                     <Route path="/Footer" element={<Footer />}/>
                 </Routes>
                 <Footer />
@@ -43,4 +53,5 @@ function App () {
 }
 
 export default App
+
 

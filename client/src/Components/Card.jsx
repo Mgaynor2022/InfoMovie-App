@@ -3,6 +3,7 @@ import {DataContext}  from "./MovieContext"
 
 
 
+
 function Card () {
 
     const {apiData,addToFavoritesDb} = useContext(DataContext)
