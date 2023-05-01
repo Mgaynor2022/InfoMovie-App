@@ -75,9 +75,9 @@ export default function MovieContext(props) {
       .catch(err => console.log(err))
     }
 
-    useEffect(() =>{
-      getFavorites()
-    }, [])
+    // useEffect(() =>{
+    //   getFavorites()
+    // }, [])
 
     function addToFavoritesDb(newFavorite){
       axios.post("http://localhost:3001/favoritesData", newFavorite)
@@ -99,7 +99,7 @@ export default function MovieContext(props) {
       value={{
         homePage, searchData, setSearchData, handleChange,
         apiData,handleSubmit,addToFavoritesDb,favorites,
-        deleteFavoriteDb
+        deleteFavoriteDb, getFavorites
       }}>
             {props.children}
     </DataContext.Provider>

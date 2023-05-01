@@ -1,12 +1,16 @@
-import React,{useContext} from "react"
+import React,{useContext, useEffect} from "react"
 import { DataContext } from "./MovieContext"
 
 
 
  function Favorites() {
 
-    const {favorites,deleteFavoriteDb} = useContext(DataContext)
-    console.log(favorites, "comparing")
+   
+   const {favorites,deleteFavoriteDb, getFavorites} = useContext(DataContext)
+   console.log(favorites, "comparing")
+   useEffect(() =>{
+     getFavorites()
+   }, [])
     return (
         <div className="grid grid-cols-3 gap-3 mt-5">
           
