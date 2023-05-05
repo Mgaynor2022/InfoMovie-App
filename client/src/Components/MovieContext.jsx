@@ -78,7 +78,7 @@ export default function MovieContext(props) {
     console.log(apiData, "testing ApiData")
 
     function getFavorites(){
-      axios.get("https://infomovie.onrender.com/Favorites")
+      axios.get("http://localhost:3001/favoritesData")
       .then(res => setFavorites(res.data))
       .catch(err => console.log(err))
     }
