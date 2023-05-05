@@ -32,9 +32,9 @@ function SearchStyle () {
             </button>
         </div>
     </form>
-    <div className="">
-        <Card />
-        </div>
+  
+         <Card />   
+    
     </div>
     )
 }
