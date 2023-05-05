@@ -15,21 +15,21 @@ function App () {
 					<h1 href="#" class="font-bold text-xl tracking-wider">infoMovie App</h1>
 					<ul className="hidden md:flex uppercase text-sm ml-8">
 
-						<li>
-							<Link className="text-gray-600 hover:underline" to="/LandingPage">Home</Link>
+						<li className="ml-8 text-gray-600 hover:underline hover:decoration-4 hover:underline-offset-8">
+							<Link to="/LandingPage">Home</Link>
 						</li>
-                        <li className="ml-8">
+                        <li className="ml-8 text-gray-600 hover:underline hover:decoration-4 hover:underline-offset-8">
                             <Link to="/About">
-                                <Scroll className="text-gray-600" activeClass="active"
+                                <Scroll activeClass="active"
                                 to="About" spy={true} smooth={true} offset={50} duration={500}>About</Scroll>
 
                             </Link>
 						</li>
-						<li className="ml-8">
-							<Link className="text-gray-600" to="/searchStyle">Search</Link>
+						<li className="ml-8 text-gray-600 hover:underline hover:decoration-4 hover:underline-offset-8">
+							<Link to="/searchStyle">Search</Link>
 						</li>
-						<li className="ml-8">
-							<Link className="text-gray-600" to="/Favorites">Favorites</Link>
+						<li className="ml-8 text-gray-600 hover:underline hover:decoration-4 hover:underline-offset-8">
+							<Link  to="/Favorites">Favorites</Link>
 						</li>
 
 					</ul>

@@ -18,7 +18,7 @@ function LandingPage(){
                             <img src={data.poster} className="w-full h-full" />
                             </div>
                             <div className="absolute my-rotate-y-180 backface-hidden w-full h-full bg-gray-100 overflow-hidden">                
-                                <div className="text-center flex flex-col items-center justify-center h-full text-gray-800 px-2 pb-18">
+                                <div className="text-center flex flex-col items-center justify-center h-full text-gray-800 px-2 pb-24">
                                     <h3 className="text-3xl font-semibold">{data.title}</h3>
                                     <span className="my-2">{data.year}, {data.genre}</span>
                                     <span>{data.actors}</span>
@@ -44,7 +44,7 @@ function LandingPage(){
                         <h1 className="text-3xl md:text-6xl leading-tight mb-16">Let The Search Begin </h1>
                             <Link 
                             to="/SearchStyle"
-                            className="border border-white py-4 px-8 hover:bg-white hover:text-black">Search Movie
+                            className=" font-medium border border-white py-4 px-8 hover:bg-white hover:text-black">Search Movie
                             </Link>
                     </div>
                 </div>

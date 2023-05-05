@@ -19,9 +19,7 @@ app.use(cors({
 mongoose.connect(process.env.MONGODB_URI,{useNewUrlParser: true})
 .then(()=> console.log("Connected to MongoDB"))
 .catch(err => console.error(err));
-// mongoose.connect('mongodb://localhost:27017/favoritesData',{useNewUrlParser: true})
-// .then(()=> console.log("Connected to MongoDB"))
-// .catch(err => console.error(err));
+
 
 //Routes
 app.use("/favoritesData", require("./routes/favoriteData.jsx"))
@@ -35,12 +33,7 @@ app.use((err,req,res,next) =>{
 
 // Deploying app
 app.use(express.static(path.join(__dirname, "client", "dist")));
-// app.use(express.static(path.join(__dirname, "client", "build")))
 
-
-// app.get("*", (req, res) => {
-//   res.sendFile(path.join(__dirname, "client", "build", "index.html"));
-// });
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
 });

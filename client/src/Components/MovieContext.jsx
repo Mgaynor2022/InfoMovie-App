@@ -45,6 +45,12 @@ export default function MovieContext(props) {
     title:"",
     id:""
   })
+ function resetFrom(){
+  setSearchData({
+    title:""
+  })
+ }
+
   const [apiData, setApiData] = useState([])
   const [favorites, setFavorites] = useState([])
 
@@ -63,9 +69,11 @@ export default function MovieContext(props) {
       axios.get(`http://www.omdbapi.com/?t=${searchData.title}&apikey=9d97bb4b`)
       .then((res) => setApiData(([
         res.data
+        
       ])))
 
       .catch(error => console.log(error)) 
+      resetFrom()
     }
     console.log(apiData, "testing ApiData")
 
@@ -99,7 +107,7 @@ export default function MovieContext(props) {
       value={{
         homePage, searchData, setSearchData, handleChange,
         apiData,handleSubmit,addToFavoritesDb,favorites,
-        deleteFavoriteDb, getFavorites
+        deleteFavoriteDb, getFavorites, resetFrom
       }}>
             {props.children}
     </DataContext.Provider>
