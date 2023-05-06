@@ -9,17 +9,24 @@ require("dotenv").config()
 //MiddleWare for every request
 app.use(express.json())
 app.use(morgan("dev")) // Logs Request To Console
+// Deploying app
+app.use(express.static(path.join(__dirname, "client", "dist")));
 
 
 app.use(cors({
   origin: true
 }))
 
-// Connect To DataBase 
-mongoose.connect(process.env.MONGODB_URI,{useNewUrlParser: true})
-.then(()=> console.log("Connected to MongoDB"))
-.catch(err => console.error(err));
+// // Connect To DataBase 
+// mongoose.connect(process.env.MONGODB_URI,{useNewUrlParser: true})
+// .then(()=> console.log("Connected to MongoDB"))
+// .catch(err => console.error(err));
 
+// Connect to MongoDB database
+mongoose.set('strictQuery', false);
+mongoose.connect(process.env.MONGODB_URI, () =>
+  console.log('Connected to the DB')
+);
 
 //Routes
 app.use("/favoritesData", require("./routes/favoriteData.jsx"))
@@ -31,8 +38,6 @@ app.use((err,req,res,next) =>{
   return res.send({errMsg:err.message})
 })
 
-// Deploying app
-app.use(express.static(path.join(__dirname, "client", "dist")));
 
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
