@@ -23,10 +23,25 @@ app.use(cors({
 // .catch(err => console.error(err));
 
 // Connect to MongoDB database
+// mongoose.set('strictQuery', false);
+// mongoose.connect(process.env.MONGODB_URI, () =>
+//   console.log('Connected to the DB')
+// );
 mongoose.set('strictQuery', false);
-mongoose.connect(process.env.MONGODB_URI, () =>
-  console.log('Connected to the DB')
-);
+mongoose.connect(process.env.MONGODB_URI)
+    .then(() => {
+        console.log('Connected to database');
+
+        app.listen(3001, (err) => {
+            if (err) {
+                throw new Error(err);
+            }
+            console.log('Server is Successfully Running, and App is listening on port 3001 ');
+        });
+    })
+    .catch(err => {
+        console.error(err);
+    });
 
 //Routes
 app.use("/favoritesData", require("./routes/favoriteData.jsx"))
@@ -44,6 +59,6 @@ app.get("*", (req, res) => {
 });
 
 
-app.listen(3001, () => {
-    console.log("Server Is Running")
-})
+// app.listen(3001, () => {
+//     console.log("Server Is Running")
+// })
