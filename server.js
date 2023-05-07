@@ -6,12 +6,16 @@ const cors = require("cors")
 const path = require("path")
 require("dotenv").config()
 
+//Connect to MongoDB database
+mongoose.set('strictQuery', false);
+mongoose.connect(process.env.MONGODB_URI, () =>
+  console.log('Connected to the DB')
+);
 //MiddleWare for every request
 app.use(express.json())
 app.use(morgan("dev")) // Logs Request To Console
 // Deploying app
 app.use(express.static(path.join(__dirname, "client", "dist")));
-
 
 app.use(cors({
   origin: true
@@ -22,28 +26,19 @@ app.use(cors({
 // .then(()=> console.log("Connected to MongoDB"))
 // .catch(err => console.error(err));
 
-//Connect to MongoDB database
-mongoose.set('strictQuery', false);
-mongoose.connect(process.env.MONGODB_URI, () =>
-  console.log('Connected to the DB')
-);
-
-
-//Routes
-app.use("/favoritesData", require("./routes/favoriteData.jsx"))
-//server/routes/favoriteData.jsx
-
 //Error Handling 
 app.use((err,req,res,next) =>{
   console.log(err)
   return res.send({errMsg:err.message})
 })
 
+//Routes
+app.use("/favoritesData", require("./routes/favoriteData.jsx"))
+//server/routes/favoriteData.jsx
 
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
 });
-
 
 app.listen(3001, () => {
     console.log("Server Is Running")
