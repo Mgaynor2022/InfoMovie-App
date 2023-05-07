@@ -77,8 +77,8 @@ export default function MovieContext(props) {
     }
 
     function getFavorites(){
-      axios.get("https://infomovie.onrender.com/favoritesData")
-      // axios.get("/favoritesData")
+      // axios.get("https://infomovie.onrender.com/favoritesData")
+      axios.get("/favoritesData")
       // axios.get("http://localhost:3001/favoritesData")
       .then(res => setFavorites(res.data))
       .catch(err => console.log(err))
@@ -89,8 +89,8 @@ export default function MovieContext(props) {
     }, [])
 
     function addToFavoritesDb(newFavorite){
-      axios.post("https://infomovie.onrender.com/favoritesData", newFavorite)
-      // axios.post("/favoritesData", newFavorite)
+      // axios.post("https://infomovie.onrender.com/favoritesData", newFavorite)
+      axios.post("/favoritesData", newFavorite)
       // axios.post("http://localhost:3001/favoritesData", newFavorite)
       .then(res => {
         setFavorites(prevFav => [...prevFav, res.data])
@@ -98,8 +98,8 @@ export default function MovieContext(props) {
     }
     
     function deleteFavoriteDb (favoriteId){
-      axios.delete(`https://infomovie.onrender.com/favoritesData/${favoriteId}`)
-      // axios.delete(`/favoritesData/${favoriteId}`)
+      // axios.delete(`https://infomovie.onrender.com/favoritesData/${favoriteId}`)
+      axios.delete(`/favoritesData/${favoriteId}`)
       // axios.delete(`http://localhost:3001/favoritesData/${favoriteId}`)
       .then(res => {
         setFavorites(prevFav => prevFav.filter(favorite => favorite._id !== favoriteId))
