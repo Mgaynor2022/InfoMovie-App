@@ -75,10 +75,10 @@ export default function MovieContext(props) {
       .catch(error => console.log(error)) 
       resetFrom()
     }
-    console.log(apiData, "testing ApiData")
 
     function getFavorites(){
-      axios.get("http://localhost:3001/favoritesData")
+      axios.get("/favoritesData")
+      // axios.get("http://localhost:3001/favoritesData")
       .then(res => setFavorites(res.data))
       .catch(err => console.log(err))
     }
@@ -88,14 +88,16 @@ export default function MovieContext(props) {
     // }, [])
 
     function addToFavoritesDb(newFavorite){
-      axios.post("http://localhost:3001/favoritesData", newFavorite)
+      axios.post("/favoritesData", newFavorite)
+      // axios.post("http://localhost:3001/favoritesData", newFavorite)
       .then(res => {
         setFavorites(prevFav => [...prevFav, res.data])
       })
     }
     
     function deleteFavoriteDb (favoriteId){
-      axios.delete(`http://localhost:3001/favoritesData/${favoriteId}`)
+      axios.delete(`/favoritesData/${favoriteId}`)
+      // axios.delete(`http://localhost:3001/favoritesData/${favoriteId}`)
       .then(res => {
         setFavorites(prevFav => prevFav.filter(favorite => favorite._id !== favoriteId))
         
