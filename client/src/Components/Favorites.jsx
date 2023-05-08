@@ -13,10 +13,10 @@ import Zoom from 'react-reveal/Zoom'
     return (
 
             <Zoom > 
-        <div className="grid grid-cols-3 gap-3 mt-5">
+        <div id="favorite-container" className="grid grid-cols-1 gap-3 mt-5 sm:grid-cols-2 lg:grid-cols-3">
               {favorites.map(data => (
                 <section className="movie-container flex flex-wrap justify-center flex--movie hover:scale-110 p-10">
-                <div className="w-full h-[420px] bg-transparent cursor-pointer group perspective">
+                <div className="w-[420px] h-[500px] bg-transparent cursor-pointer group perspective">
                   <div className="relative preserve-3d group-hover:my-rotate-y-180 w-full h-full duration-1000">   
                     <div class="absolute backface-hidden border-2 w-full h-full">  
                       <img src={data.Poster} className="w-full h-full" />

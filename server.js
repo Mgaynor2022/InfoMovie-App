@@ -6,12 +6,6 @@ const cors = require("cors")
 const path = require("path")
 require("dotenv").config()
 
-//Connect to MongoDB database
-// mongoose.set('strictQuery', false);
-// mongoose.connect(process.env.MONGODB_URI, () =>
-//   console.log('Connected to the DB')
-// );
-
 
 //MiddleWare for every request
 app.use(express.json())
@@ -23,10 +17,6 @@ app.use(cors({
   origin: true
 }))
 
-// // Connect To DataBase 
-// mongoose.connect(process.env.MONGODB_URI,{useNewUrlParser: true})
-// .then(()=> console.log("Connected to MongoDB"))
-// .catch(err => console.error(err));
 
 //Error Handling 
 app.use((err,req,res,next) =>{
@@ -42,9 +32,7 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
 });
 
-// app.listen(3001, () => {
-//     console.log("Server Is Running")
-// })
+
 mongoose.set('strictQuery', false);
 mongoose.connect(process.env.MONGODB_URI)
     .then(() => {

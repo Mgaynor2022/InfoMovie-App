@@ -12,7 +12,7 @@ function LandingPage(){
     const favoriteMovies = homePage.map(data => {
         return (
             <section className="movie-container flex flex-wrap justify-center flex--movie hover:scale-110 p-10">
-                <div className="w-[300px] h-[420px] bg-transparent cursor-pointer group perspective">
+                <div className="w-[400px] h-[450px] bg-transparent cursor-pointer group perspective">
                     <div className="relative preserve-3d group-hover:my-rotate-y-180 w-full h-full duration-1000">   
                         <div class="absolute backface-hidden border-2 w-full h-full">  
                             <img src={data.poster} className="w-full h-full" />
@@ -52,7 +52,7 @@ function LandingPage(){
           
                 <div className="flex flex-wrap -mx-2 justify-center">
                     <About />
-                    <div className="grid grid-cols-3 gap-3 mt-5">
+                    <div className=" grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-3 gap-3 mt-5">
                         <Fade top distance='20%' duration={2500}>
                             {favoriteMovies}
                         </Fade>
