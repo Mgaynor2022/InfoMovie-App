@@ -5,8 +5,9 @@ import Zoom from 'react-reveal/Zoom'
 
 
  function Favorites() {
+  
    const {favorites,deleteFavoriteDb, getFavorites} = useContext(DataContext)
-   console.log(favorites, "comparing")
+
    useEffect(() =>{
      getFavorites()
    }, [])

@@ -7,6 +7,7 @@ import LandingPage from "./Components/LandingPage"
 import Footer from "./Components/Footer"
 import About from "./Components/About"
 import MobileNavbar from "./Components/MobileNavbar"
+import DisplayFavoriteCard from "./Components/DisplayFavoriteCard"
 
 function App () {
     return (
@@ -41,14 +42,15 @@ function App () {
                 <Route index element={<LandingPage />}/>
                     <Route path="/LandingPage"  index element={<LandingPage />} />
                     <Route path="/searchStyle" element={<SearchStyle />}/>
-                    <Route path="/Favorites" element={<Favorites />}/>
+                    <Route path="/Favorites" element={<DisplayFavoriteCard />}/>
+                    {/* <Route path="/Favorites" element={<Favorites />}/> */}
                     <Route path="/About" element={<About />}/>
                     <Route path="/Footer" element={<Footer />}/>
                 </Routes>
                 <Footer />
             </MovieContext>
 
-            </div>
+        </div>
         
     )
 }
