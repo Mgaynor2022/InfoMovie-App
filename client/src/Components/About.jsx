@@ -1,11 +1,9 @@
-import React,{useContext}from "react"
-import {DataContext} from "./MovieContext"
+import React from "react"
 import Fade from 'react-reveal/Fade'
 
 
 function About (){
 
-    const {homePage} = useContext(DataContext)
     return(
       <div className="w-full relative flex items-center" id='About'>
         <Fade top distance='20%' duration={2000}  >

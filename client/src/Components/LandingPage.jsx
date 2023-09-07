@@ -33,7 +33,7 @@ function LandingPage(){
     })
 
     return (
-        <div className="font-sans font-thin p-12 ">
+        <div className=" p-12 ">
             <div className="w-full h-screen relative flex items-center text-white">
 
                 <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=1800"

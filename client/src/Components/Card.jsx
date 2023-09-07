@@ -1,9 +1,5 @@
-import React, {useContext} from "react"
-import {DataContext}  from "./MovieContext"
+import React from "react"
 import { Zoom } from "react-reveal"
-
-
-//w-[450px] h-[420px]
 
 function Card (props) {
 
@@ -17,7 +13,6 @@ function Card (props) {
     Year,
     addToFavoritesDb,
     name
-    // data
     } = props
 
   return (
@@ -35,10 +30,10 @@ function Card (props) {
     <span>{Actors}</span>
     <span>{Awards}</span>
     <p>{Plot}</p>
+    
     <button 
     className="bg-black px-6 py-2 font-semibold text-white rounded-full absolute -bottom-20 delay-500 duration-700 hover:bg-gray-700 group-hover:bottom-20 scale-0 group-hover:scale-125"
     onClick={addToFavoritesDb}
-    // onClick={() => addToFavoritesDb(data)}
     >
       {name}
     </button>

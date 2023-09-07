@@ -2,7 +2,6 @@ import {Routes, Route, Link} from "react-router-dom"
 import {Link as Scroll} from 'react-scroll' 
 import MovieContext  from "./Components/MovieContext"
 import SearchStyle from "./Components/SearchStyle"
-import Favorites from "./Components/Favorites"
 import LandingPage from "./Components/LandingPage"
 import Footer from "./Components/Footer"
 import About from "./Components/About"
@@ -37,13 +36,12 @@ function App () {
 				</header>
                         <MobileNavbar />
 
-            <MovieContext className="">
+            <MovieContext>
                 <Routes>
                 <Route index element={<LandingPage />}/>
                     <Route path="/LandingPage"  index element={<LandingPage />} />
                     <Route path="/searchStyle" element={<SearchStyle />}/>
                     <Route path="/Favorites" element={<DisplayFavoriteCard />}/>
-                    {/* <Route path="/Favorites" element={<Favorites />}/> */}
                     <Route path="/About" element={<About />}/>
                     <Route path="/Footer" element={<Footer />}/>
                 </Routes>

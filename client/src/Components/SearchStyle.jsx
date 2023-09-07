@@ -32,7 +32,6 @@ function SearchStyle () {
         </div>
     </form>
         <DisplaySearchCard />
-         {/* <Card />    */}
     
     </>
     )

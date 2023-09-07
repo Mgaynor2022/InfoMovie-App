@@ -7,7 +7,7 @@ import { useEffect } from 'react'
 
  export const DataContext = createContext()
 
-export default function MovieContext(props) {
+const MovieContext = (props) => {
   
 
   const [homePage, setHomePage] = useState([
@@ -114,3 +114,5 @@ export default function MovieContext(props) {
     </DataContext.Provider>
   )
 }
+
+export default MovieContext
