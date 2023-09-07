@@ -14,6 +14,7 @@ return (
             <Card
             {...data}
             addToFavoritesDb={() => addToFavoritesDb(data)}
+            name="Add To Favorites"
             />
         </>
         )}

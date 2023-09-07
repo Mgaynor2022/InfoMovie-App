@@ -16,6 +16,7 @@ function Card (props) {
     Plot,
     Year,
     addToFavoritesDb,
+    name
     // data
     } = props
 
@@ -39,7 +40,7 @@ function Card (props) {
     onClick={addToFavoritesDb}
     // onClick={() => addToFavoritesDb(data)}
     >
-      Add To Favorites
+      {name}
     </button>
   </div>
 </div>
