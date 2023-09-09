@@ -1,7 +1,7 @@
 import React from 'react'
 
 
- function Footer(){
+ const Footer = () => {
 
     return (
         <footer className='w-full mt-auto text-center bg-white px-8 py-8'>

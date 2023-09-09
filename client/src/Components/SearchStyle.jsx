@@ -59,7 +59,7 @@ const SearchStyle = () => {
               initial={toggleReviews ? 'open' : 'closed'}
               animate={toggleReviews ? 'open' : 'closed'}
               variants={cardVariants}
-              transition={{ duration: 5.0 }}
+              transition={{ duration: 3.0 }}
             >
                 <DisplaySearchCard
                 apiData={apiData}
@@ -75,7 +75,7 @@ const SearchStyle = () => {
          initial={toggleReviews ? 'open' : 'closed'}
          animate={toggleReviews ? 'open' : 'closed'}
          variants={cardVariants2}
-         transition={{ duration: 5.0 }}
+         transition={{ duration: 3.0 }}
         >
             {toggleReviews && 
                 <Reviews />

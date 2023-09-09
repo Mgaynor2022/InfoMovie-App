@@ -1,7 +1,7 @@
 import React from "react"
 
 
-function Card (props) {
+const Card = (props) => {
 
   const {
     Poster,

@@ -5,7 +5,6 @@ const DisplaySearchCard = (props) => {
 const {
      apiData,
      addToFavoritesDb,
-     toggleReviews,
      reviewToggle
     } = props
 

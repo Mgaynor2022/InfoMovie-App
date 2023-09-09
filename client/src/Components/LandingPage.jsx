@@ -5,7 +5,7 @@ import {Link} from "react-router-dom"
 import Fade from 'react-reveal/Fade'
 
 
-function LandingPage(){
+const LandingPage = () => {
 
     const {homePage} = useContext(DataContext)
     
