@@ -19,7 +19,6 @@ const DisplayFavoriteCard = () => {
 
     }, [])
 
-
     return (
         <div className="grid grid-cols-1 gap-3 mt-5 sm:grid-cols-2 lg:grid-cols-3">
             { favorites.map((data) =>

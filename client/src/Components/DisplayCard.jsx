@@ -1,11 +1,13 @@
-import { useContext } from "react"
-import { DataContext } from "./MovieContext"
 import Card from "./Card"
 
+const DisplaySearchCard = (props) => {
 
-const DisplaySearchCard = () => {
-
-const { apiData,addToFavoritesDb } = useContext(DataContext)
+const {
+     apiData,
+     addToFavoritesDb,
+     toggleReviews,
+     reviewToggle
+    } = props
 
 return (
     <>
@@ -15,6 +17,8 @@ return (
             {...data}
             addToFavoritesDb={() => addToFavoritesDb(data)}
             name="Add To Favorites"
+            reviews="Click To View Ratings"
+            reviewToggle={reviewToggle}  
             />
         </>
         )}

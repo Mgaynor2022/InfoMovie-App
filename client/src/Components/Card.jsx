@@ -1,5 +1,5 @@
 import React from "react"
-import { Zoom } from "react-reveal"
+
 
 function Card (props) {
 
@@ -12,11 +12,13 @@ function Card (props) {
     Plot,
     Year,
     addToFavoritesDb,
-    name
+    name,
+    reviews,
+    reviewToggle
     } = props
 
   return (
-    <Zoom>
+
     <section className="movie-container flex flex-wrap justify-center flex--movie hover:scale-110 p-10">
       <div className="w-[420px] h-[500px] bg-transparent cursor-pointer group perspective">
         <div className="relative preserve-3d group-hover:my-rotate-y-180 w-full h-full duration-1000">   
@@ -37,13 +39,12 @@ function Card (props) {
     >
       {name}
     </button>
+    <h1 onClick={reviewToggle} className="mt-10 text-red-500 underline">{reviews}</h1>
   </div>
 </div>
 </div>
 </div>
 </section>
-
-  </Zoom>
 
   )
 

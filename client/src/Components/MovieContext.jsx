@@ -8,7 +8,13 @@ import { useEffect } from 'react'
  export const DataContext = createContext()
 
 const MovieContext = (props) => {
-  
+
+  const [toggleReviews, setToggleReviews] = useState(false)
+
+  const reviewToggle = () => {
+    setToggleReviews(prevToggle => !prevToggle)
+
+  }
 
   const [homePage, setHomePage] = useState([
     {
@@ -108,7 +114,8 @@ const MovieContext = (props) => {
       value={{
         homePage, searchData, setSearchData, handleChange,
         apiData,handleSubmit,addToFavoritesDb,favorites,
-        deleteFavoriteDb, getFavorites, resetFrom
+        deleteFavoriteDb, getFavorites, resetFrom, toggleReviews,
+        reviewToggle
       }}>
             {props.children}
     </DataContext.Provider>
