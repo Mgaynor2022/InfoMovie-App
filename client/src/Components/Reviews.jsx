@@ -36,7 +36,7 @@ const Reviews = () => {
         )
     })
     return (
-        <div>
+        <div >
             {reviewsDisplay}
         </div>
     )

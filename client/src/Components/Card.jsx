@@ -14,8 +14,15 @@ const Card = (props) => {
     addToFavoritesDb,
     name,
     reviews,
-    reviewToggle
+    reviewToggle,
+    showAlert
     } = props
+
+    const handleSubmit = (e) => {
+      e.preventDefault()
+      addToFavoritesDb()
+
+    }
 
   return (
 
@@ -26,21 +33,21 @@ const Card = (props) => {
             <img src={Poster} className="w-full h-full" />
         </div>
         <div className="absolute my-rotate-y-180 backface-hidden w-full h-full bg-gray-100 overflow-hidden">
-  <div className="text-center flex flex-col items-center justify-center h-full text-gray-800 px-2 pb-24">
+  <form onSubmit={handleSubmit} className="text-center flex flex-col items-center justify-center h-full text-gray-800 px-2 pb-24">
     <h3 className="text-3xl font-semibold">{Title}</h3>
     <span className="my-2">{Year}, {Genre}</span>
     <span>{Actors}</span>
     <span>{Awards}</span>
     <p>{Plot}</p>
-    
+
     <button 
     className="bg-black px-6 py-2 font-semibold text-white rounded-full absolute -bottom-20 delay-500 duration-700 hover:bg-gray-700 group-hover:bottom-20 scale-0 group-hover:scale-125"
-    onClick={addToFavoritesDb}
+    onClick={() => showAlert()}
     >
       {name}
     </button>
     <h1 onClick={reviewToggle} className="mt-10 text-red-500 underline">{reviews}</h1>
-  </div>
+  </form>
 </div>
 </div>
 </div>

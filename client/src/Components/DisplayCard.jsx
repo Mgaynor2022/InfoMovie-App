@@ -5,22 +5,25 @@ const DisplaySearchCard = (props) => {
 const {
      apiData,
      addToFavoritesDb,
-     reviewToggle
+     reviewToggle,
+     showAlert
     } = props
 
 return (
     <>
         { apiData.map((data) =>
-        <>
+        <div className="relative">
             <Card
             {...data}
             addToFavoritesDb={() => addToFavoritesDb(data)}
             name="Add To Favorites"
             reviews="Click To View Ratings"
-            reviewToggle={reviewToggle}  
+            reviewToggle={reviewToggle} 
+            showAlert={showAlert} 
             />
-        </>
+        </div>
         )}
+        
     </>
 )
 

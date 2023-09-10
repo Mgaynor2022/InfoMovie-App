@@ -1,8 +1,9 @@
-import React,{useContext} from "react"
+import React,{useContext, useState} from "react"
 import {DataContext } from "./MovieContext"
 import DisplaySearchCard from "./DisplayCard"
 import Reviews from "./Reviews"
 import { motion } from "framer-motion"
+import Alert from "./Alert"
 
 
 const SearchStyle = () => {
@@ -17,23 +18,33 @@ const SearchStyle = () => {
         reviewToggle
             } = useContext(DataContext)
 
-        const cardVariants = {
-            open: {
-              x: '-10%',
-            },
-            closed: {
-              x: '0%',
-            },
-          };
+    const cardVariants = {
+        open: {
+          x: '-15%',
+        },
+        closed: {
+          x: '0%',
+        },
+      };
 
-          const cardVariants2 = {
-            open: {
-              x: '10%',
-            },
-            closed: {
-              x: '0%',
-            },
-          };
+    const cardVariants2 = {
+      open: {
+        x: '15%',
+      },
+      closed: {
+        x: '0%',
+      },
+    };
+
+    const [toggleAlert, setToggleAlert] = useState(false)
+
+    const showAlert = () => {
+        setToggleAlert(pervToggle => !pervToggle)
+
+        setTimeout(() => {
+           setToggleAlert(false);
+          }, 2000); 
+    }
 
 
     return(
@@ -66,24 +77,30 @@ const SearchStyle = () => {
                 addToFavoritesDb={addToFavoritesDb}
                 toggleReviews={toggleReviews}
                 reviewToggle={reviewToggle}
+                showAlert={showAlert}
                 />
 
             </motion.div>
 
             
-        <motion.div
+        <motion.div className="relative"
          initial={toggleReviews ? 'open' : 'closed'}
          animate={toggleReviews ? 'open' : 'closed'}
          variants={cardVariants2}
          transition={{ duration: 3.0 }}
         >
+          
             {toggleReviews && 
                 <Reviews />
                 }
 
         </motion.div>
         </div>
-       
+       <div className=" w-1/2 absolute top-1/2 transform translate-x-1/2 translate-y-1/2">
+            {toggleAlert && 
+                <Alert />
+            }
+        </div>
     
     </>
     )
