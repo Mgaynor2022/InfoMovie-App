@@ -15,12 +15,14 @@ const Card = (props) => {
     name,
     reviews,
     reviewToggle,
-    showAlert
+    showAlert,
+    setAlertMessage,
     } = props
 
     const handleSubmit = (e) => {
       e.preventDefault()
       addToFavoritesDb()
+      setAlertMessage()
 
     }
 

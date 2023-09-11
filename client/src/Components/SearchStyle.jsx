@@ -15,7 +15,11 @@ const SearchStyle = () => {
         apiData,
         addToFavoritesDb,
         toggleReviews,
-        reviewToggle
+        reviewToggle,
+        toggleAlert,
+        showAlert,
+        setAlertMessage,
+        alertMessage
             } = useContext(DataContext)
 
     const cardVariants = {
@@ -35,17 +39,6 @@ const SearchStyle = () => {
         x: '0%',
       },
     };
-
-    const [toggleAlert, setToggleAlert] = useState(false)
-
-    const showAlert = () => {
-        setToggleAlert(pervToggle => !pervToggle)
-
-        setTimeout(() => {
-           setToggleAlert(false);
-          }, 2000); 
-    }
-
 
     return(
         <>
@@ -78,6 +71,8 @@ const SearchStyle = () => {
                 toggleReviews={toggleReviews}
                 reviewToggle={reviewToggle}
                 showAlert={showAlert}
+                setAlertMessage={setAlertMessage}
+                alertMessage={alertMessage}
                 />
 
             </motion.div>
@@ -98,7 +93,9 @@ const SearchStyle = () => {
         </div>
        <div className=" w-1/2 absolute top-1/2 transform translate-x-1/2 translate-y-1/2">
             {toggleAlert && 
-                <Alert />
+                <Alert
+                alertMessage={alertMessage}
+                 />
             }
         </div>
     

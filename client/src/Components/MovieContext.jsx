@@ -16,6 +16,18 @@ const MovieContext = (props) => {
 
   }
 
+  const [toggleAlert, setToggleAlert] = useState(false)
+  
+  const [alertMessage, setAlertMessage] = useState("")
+
+    const showAlert = () => {
+        setToggleAlert(pervToggle => !pervToggle)
+
+        setTimeout(() => {
+           setToggleAlert(false);
+          }, 2000); 
+    }
+
   const [homePage, setHomePage] = useState([
     {
       title:"Malcolm X",
@@ -83,7 +95,7 @@ const MovieContext = (props) => {
     }
 
     function getFavorites(){
-      axios.get("/favoritesData")
+      axios.get("/api/favoritesData")
       .then(res => setFavorites(res.data))
       .catch(err => console.log(err))
     }
@@ -93,15 +105,15 @@ const MovieContext = (props) => {
     }, [])
 
     function addToFavoritesDb(newFavorite){
-      axios.post("/favoritesData", newFavorite)
+      axios.post("/api/favoritesData", newFavorite)
       .then(res => {
         setFavorites(prevFav => [...prevFav, res.data])
       })
       .catch(err => console.log(err))
     }
-    
+
     function deleteFavoriteDb (favoriteId){
-      axios.delete(`/favoritesData/${favoriteId}`)
+      axios.delete(`/api/favoritesData/${favoriteId}`)
       .then(res => {
         setFavorites(prevFav => prevFav.filter(favorite => favorite._id !== favoriteId))
         
@@ -115,7 +127,8 @@ const MovieContext = (props) => {
         homePage, searchData, setSearchData, handleChange,
         apiData,handleSubmit,addToFavoritesDb,favorites,
         deleteFavoriteDb, getFavorites, resetFrom, toggleReviews,
-        reviewToggle
+        reviewToggle, toggleAlert, showAlert,
+        alertMessage, setAlertMessage
       }}>
             {props.children}
     </DataContext.Provider>

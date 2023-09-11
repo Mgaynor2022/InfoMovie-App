@@ -6,7 +6,8 @@ const {
      apiData,
      addToFavoritesDb,
      reviewToggle,
-     showAlert
+     showAlert,
+     setAlertMessage
     } = props
 
 return (
@@ -19,7 +20,8 @@ return (
             name="Add To Favorites"
             reviews="Click To View Ratings"
             reviewToggle={reviewToggle} 
-            showAlert={showAlert} 
+            showAlert={showAlert}
+            setAlertMessage={() => setAlertMessage("added")}
             />
         </div>
         )}
