@@ -14,7 +14,7 @@ const LandingPage = () => {
             <section className="movie-container flex flex-wrap justify-center flex--movie hover:scale-110 p-10">
                 <div className="w-[400px] h-[450px] bg-transparent cursor-pointer group perspective">
                     <div className="relative preserve-3d group-hover:my-rotate-y-180 w-full h-full duration-1000">   
-                        <div class="absolute backface-hidden border-2 w-full h-full">  
+                        <div className="absolute backface-hidden border-2 w-full h-full">  
                             <img src={data.poster} className="w-full h-full" />
                             </div>
                             <div className="absolute my-rotate-y-180 backface-hidden w-full h-full bg-gray-100 overflow-hidden">                
@@ -23,7 +23,7 @@ const LandingPage = () => {
                                     <span className="my-2">{data.year}, {data.genre}</span>
                                     <span>{data.actors}</span>
                                     <span>{data.awards}</span>
-                                    <p className="">{data.plot}</p>
+                                    <p >{data.plot}</p>
                                     </div>                                 
                                 </div>
                             </div>

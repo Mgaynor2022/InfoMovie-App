@@ -31,7 +31,7 @@ const Card = (props) => {
     <section className="movie-container flex flex-wrap justify-center flex--movie hover:scale-110 p-10">
       <div className="w-[420px] h-[500px] bg-transparent cursor-pointer group perspective">
         <div className="relative preserve-3d group-hover:my-rotate-y-180 w-full h-full duration-1000">   
-          <div class="absolute backface-hidden border-2 w-full h-full">  
+          <div className="absolute backface-hidden border-2 w-full h-full">  
             <img src={Poster} className="w-full h-full" />
         </div>
         <div className="absolute my-rotate-y-180 backface-hidden w-full h-full bg-gray-100 overflow-hidden">

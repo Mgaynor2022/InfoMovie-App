@@ -13,7 +13,7 @@ function App () {
         // Pushing the footer to the bottom of the page
             <div  className="app min-h-screen flex flex-col">
             <header id="bigNavbar" className="bg-white px-8 py-8 flex justify-between items-center">
-					<h1 href="#" class="font-bold text-xl tracking-wider">infoMovie App</h1>
+					<h1 className="font-bold text-xl tracking-wider">infoMovie App</h1>
 					<ul className="hidden md:flex uppercase text-sm ml-8">
 
 						<li className="ml-8 text-gray-600 hover:underline hover:decoration-4 hover:underline-offset-8">

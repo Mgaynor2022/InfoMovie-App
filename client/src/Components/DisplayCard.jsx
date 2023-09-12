@@ -13,7 +13,7 @@ const {
 return (
     <>
         { apiData.map((data) =>
-        <div className="relative">
+        <div className="relative" key={data._id}>
             <Card
             {...data}
             addToFavoritesDb={() => addToFavoritesDb(data)}

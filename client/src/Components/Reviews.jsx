@@ -22,7 +22,7 @@ const Reviews = () => {
                 <h3>{review.Title}</h3>
                 {review.Ratings.map(rating => {
                     return (
-                        <div className="text-lg">
+                        <div className="text-lg" key={rating._id}>
                             <h3>{rating.Source}</h3>
                             <h3>{rating.Value}</h3>
                         </div>

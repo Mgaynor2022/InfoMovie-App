@@ -1,4 +1,4 @@
-import {Routes, Route, Link} from "react-router-dom"
+import {Link} from "react-router-dom"
 import {Link as Scroll} from 'react-scroll' 
 import React, {useState} from 'react'
 import {RxHamburgerMenu } from 'react-icons/rx'
