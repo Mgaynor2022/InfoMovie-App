@@ -25,7 +25,7 @@ app.use((err,req,res,next) =>{
 })
 
 //Routes
-app.use("/favoritesData", require("./routes/favoriteData.jsx"))
+app.use("/api/favoritesData", require("./routes/favoriteData.jsx"))
 //server/routes/favoriteData.jsx
 
 app.get("*", (req, res) => {
